@@ -1,7 +1,9 @@
 object Compose {
-    const val composeVersion = "1.3.0-alpha03"
-    const val runtime = "androidx.compose.runtime:runtime:${composeVersion}"
+    const val composeVersion = "1.1.0"
+
     const val runtimeLiveData = "androidx.compose.runtime:runtime-livedata:${composeVersion}"
+    const val runtime = "androidx.compose.runtime:runtime:${composeVersion}"
+    const val androidCore = "androidx.core:core-ktx:1.7.0"
     const val ui = "androidx.compose.ui:ui:${composeVersion}"
     const val material = "androidx.compose.material:material:${composeVersion}"
     const val uiTooling = "androidx.compose.ui:ui-tooling:${composeVersion}"
@@ -11,7 +13,7 @@ object Compose {
     private const val constraintLayoutComposeVersion = "1.1.0-alpha03"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout-compose:${constraintLayoutComposeVersion}"
 
-    private const val composeActivitiesVersion = "1.6.0-alpha05"
+    private const val composeActivitiesVersion = "1.1.3"
     const val activity = "androidx.activity:activity-compose:${composeActivitiesVersion}"
 
     private const val composeNavigationVerson = "2.5.1"

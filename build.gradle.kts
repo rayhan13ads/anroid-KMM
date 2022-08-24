@@ -5,8 +5,11 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath(Build.kotlinGradlePlugin)
+        //classpath( "com.google.gms:google-services:4.3.13")
         classpath(Build.buildTools)
+        classpath(Build.kotlinGradlePlugin)
+        classpath(Build.hiltGradlePlugin)
+        classpath(Build.sqlDelightGradlePlugin)
     }
 }
 

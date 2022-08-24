@@ -1,8 +1,11 @@
+
 plugins {
     id("com.android.application")
     kotlin("android")
     kotlin(KotlinPlugins.kapt)
+    id(Plugins.hilt)
     kotlin(KotlinPlugins.serialization) version  Kotlin.version
+
 }
 
 android {
@@ -19,10 +22,28 @@ android {
             isMinifyEnabled = false
         }
     }
+    buildFeatures {
+        compose = true
+    }
+    compileOptions{
+        sourceCompatibility =  org.gradle.api.JavaVersion.VERSION_11
+        targetCompatibility = org.gradle.api.JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = "11"
+
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Compose.composeVersion
+    }
+
+
 }
 
 dependencies {
     implementation(project(":shared"))
+    implementation(Compose.androidCore)
 //    implementation("com.google.android.material:material:1.6.1")
 //    implementation("androidx.appcompat:appcompat:1.5.0")
 //    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -44,11 +65,27 @@ dependencies {
     implementation(Google.material)
 
     implementation(Hilt.hiltAndroid)
-    implementation(Hilt.hiltNavigation)
+    implementation(Hilt.hiltComposeNavigation)
     kapt(Hilt.hiltCompiler)
 
     implementation(Kotlinx.datetime)
     implementation(Ktor.android)
 
     debugImplementation(SquareUp.leakCanary)
+
+    //implementation(Lifecycles.viewModel)
+    //implementation(Lifecycles.viewModelCompose)
+//    implementation(Lifecycles.liveData)
+//    implementation(Lifecycles.runtime)
+//    implementation(Lifecycles.saveState)
+//    kapt(Lifecycles.annotationProcessor)
+//    implementation(Lifecycles.lifecycleCompiler)
+//    implementation(Lifecycles.lifecycleOwner)
+//    implementation(Lifecycles.processlifecycleOwner)
+//    implementation(Lifecycles.reactiveStreamsLiveData)
+//    testImplementation(Lifecycles.testLiveData)
+//    testImplementation(Lifecycles.testLifecycleRuntime)
+
+
+
 }
